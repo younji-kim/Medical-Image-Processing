@@ -6,69 +6,6 @@ This project proposes a medical imaging solution to convert CT and MRI images bi
 
 ---
 
-## 🚀 Overview
-
-- 🩺 **Objective:** Build a program that translates CT ↔ MRI images using deep learning  
-- ⚙️ **Methods Used:** Semantic segmentation (DeepLabV3+) + Image translation (CycleGAN & StarGAN)  
-- 📊 **Evaluation Metrics:** PSNR and SSIM for quantitative comparison  
-- ✅ **Result:** StarGAN significantly outperformed CycleGAN in translation quality and flexibility  
-
----
-
-## 📚 Background
-
-CT (Computed Tomography) and MRI (Magnetic Resonance Imaging) are widely used in diagnostics but are not interchangeable. MRI provides clearer images of soft tissue but is more expensive and restricted for certain patients. CT is faster and more affordable but uses ionizing radiation.
-
-### Limitations in current practice:
-- MRI is not suitable for patients with pacemakers or claustrophobia
-- CT is unsuitable for those sensitive to radiation or contrast agents
-- Both scans are costly to perform together
-
-By creating synthetic MRI/CT images, hospitals can **reduce patient burden** and **enhance diagnostic reach**.
-
----
-
-## 🧪 Methodology
-
-### 1. 📦 Dataset & Preprocessing
-- **Source:** CT/MRI data from 30 subjects (9 randomly selected for this project)
-- **Annotation:** Done manually using [Labelme](https://github.com/wkentaro/labelme)
-- **Segmentation Format:** JSON to binary masks using DeepLabV3+
-
-### 2. 🎯 Image Segmentation
-- **Model Used:** DeepLabV3+
-- **Purpose:** Extract body from raw images for cleaner GAN input
-- **Result:** High training/validation accuracy, but test set overfit — segmentation output was masked manually for GAN input
-
-### 3. 🔁 Image Translation
-Two GAN models were implemented and compared:
-
-#### ✅ **StarGAN**
-- One model handles both CT → MRI and MRI → CT
-- Trained for 10,000 iterations
-- PSNR > 30, SSIM ≈ 1.0 → excellent structural retention
-- **Selected as final model for deployment**
-
-#### ⚠️ **CycleGAN**
-- Requires two separate models (CT→MRI and MRI→CT)
-- Lower PSNR (~17) and SSIM (~0.7)
-- Still useful for visual comparison
-
----
-
-## 📊 Results
-
-| Model      | Direction       | PSNR  | SSIM   |
-|------------|-----------------|-------|--------|
-| **StarGAN**  | CT ↔ MRI         | ~30+  | ~0.99  |
-| **CycleGAN** | CT → MRI        | 17.1  | 0.625  |
-|              | MRI → CT        | 17.7  | 0.707  |
-
-- Despite **StarGAN’s superior metrics**, CycleGAN occasionally produced more realistic images to the human eye.
-- Further tuning of StarGAN could improve visual results.
-
----
-
 ## ⚙️ How to Run This Project
 
 ### 🖥️ 1. Environment Setup
@@ -130,8 +67,6 @@ Use evaluation metrics to compare StarGAN and CycleGAN:
 - SSIM: Measures structural similarity (closer to 1 is better)
 
 Results are printed in each notebook and saved in the results/ folder.
-
-
 
 ---
 
