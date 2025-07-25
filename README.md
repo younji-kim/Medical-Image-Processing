@@ -73,7 +73,7 @@ Two GAN models were implemented and compared:
 
 ### 🖥️ 1. Environment Setup
 
-Install the required packages with:
+Install the required packages by running:
 
 ```bash
 pip install -r requirements.txt
@@ -132,30 +132,6 @@ Use evaluation metrics to compare StarGAN and CycleGAN:
 Results are printed in each notebook and saved in the results/ folder.
 
 
----
-
-## 🧠 Key Technologies
-
-- **Deep Learning Models:**  
-  - `DeepLabV3+` (Segmentation)  
-  - `StarGAN`, `CycleGAN` (Translation)
-
-- **Frameworks & Tools:**  
-  - Python  
-  - TensorFlow / PyTorch  
-  - OpenCV, NumPy, Matplotlib  
-  - Labelme
-
----
-
-## 💡 Future Work
-
-- Improve generalization of segmentation model (avoid overfitting)
-- Integrate automatic CT/MRI classifier for full pipeline automation
-- Develop a single executable pipeline:
-  - Input: raw CT or MRI
-  - Output: translated image (MRI or CT)
-- Experiment with newer generative models (e.g., diffusion models)
 
 ---
 
