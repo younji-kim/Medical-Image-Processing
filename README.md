@@ -110,7 +110,7 @@ python Deeplabv3+_TEST_IOU.py
 
 ### 🔁 4. Image Translation (CT ↔ MRI)
 #### Option A: Use StarGAN
-Notebook: StarGAN_Final.ipynb (Google Colab recommended)
+Notebook: StarGAN.ipynb (Google Colab recommended)
 
 Steps:
 - Mount your Google Drive
