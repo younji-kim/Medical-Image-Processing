@@ -1,0 +1,6 @@
+opencv-python
+matplotlib
+label
+torch
+torchvision
+tensorflow
