@@ -148,17 +148,6 @@ Results are printed in each notebook and saved in the results/ folder.
 
 ---
 
-## 🗂 Repository Structure
-📁 dataset/ # Raw and preprocessed CT/MRI images
-📁 segmentation/ # DeepLabV3+ segmentation scripts
-📁 gan_models/ # StarGAN and CycleGAN notebooks
-📁 results/ # Generated images and evaluation metrics
-📁 scripts/ # Preprocessing, training, and evaluation code
-📄 README.md # You're here!
-
-
----
-
 ## 💡 Future Work
 
 - Improve generalization of segmentation model (avoid overfitting)
