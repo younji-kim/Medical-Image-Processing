@@ -4,6 +4,8 @@ This project proposes a medical imaging solution to convert CT and MRI images bi
 
 > Developed as a part of the *Medical Image Processing* course at Ewha Womans University.
 
+![Slide1](https://github.com/user-attachments/assets/c07d1af4-1b71-438a-acc8-1c9f9ae21316)
+
 ---
 
 ## ⚙️ How to Run This Project
@@ -34,8 +36,8 @@ python label_convert.py
 # Convert Labelme data to VOC format for segmentation
 python labelme2voc.py
 ```
-
 ### 🧠 3. Train Image Segmentation Model (DeepLabV3+)
+
 ```bash
 # Train model on annotated body region masks
 python Deeplabv3+_TRAIN.py
@@ -46,8 +48,10 @@ python Deeplabv3+_TEST_IOU.py
 💡 If the test output appears blank or overfitted, consider using raw or masked images directly in GAN training.
 
 ### 🔁 4. Image Translation (CT ↔ MRI)
+
 #### Option A: Use StarGAN
-Notebook: StarGAN.ipynb (Google Colab recommended)
+Notebook: `StarGAN.ipynb` (Google Colab recommended)  
+Based on the official [StarGAN repository](https://github.com/yunjey/stargan) by Yunjey Choi.
 
 Steps:
 - Mount your Google Drive
@@ -56,8 +60,9 @@ Steps:
 
 #### Option B: Use CycleGAN
 Two separate notebooks:
-- CycleGAN[ct2mri].ipynb (CT → MRI)
-- CycleGAN[mri2ct].ipynb (MRI → CT)
+- `CycleGAN[ct2mri].ipynb` (CT → MRI)
+- `CycleGAN[mri2ct].ipynb` (MRI → CT)  
+Based on the official [CycleGAN repository](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) by Jun-Yan Zhu et al.
 
 Each notebook trains a unidirectional model and saves synthetic images for evaluation.
 
